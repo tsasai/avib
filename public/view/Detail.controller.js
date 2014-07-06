@@ -4,6 +4,21 @@ jQuery.sap.require("sap.m.MessageToast");
 
 sap.ui.controller("sap.ui.demo.avib.view.Detail", {
 
+	handleSearch : function(evt) {
+		// create model filter
+		var filters = [];
+		var query = evt.getParameter("query");
+		if (query && query.length > 0) {
+			var filter = new sap.ui.model.Filter("Name", sap.ui.model.FilterOperator.Contains, query);
+			filters.push(filter);
+		}
+		
+		//update list binding
+		var list = this.getView().byId("listMaterials");
+		var binding = list.getBinding("items");
+		binding.filter(filters);
+	},
+	
 	handleNavButtonPress : function (evt) {
 		this.nav.back("Master");
 	},
@@ -28,10 +43,15 @@ sap.ui.controller("sap.ui.demo.avib.view.Detail", {
 	
 	handleLineItemPress: function(evt) {
 		var context = evt.getSource().getBindingContext();
-		this.nav.to("LineItem", context);
+		this.nav.to("Subclass", context);
+	},
+	
+	handleListSelect : function (evt) {
+		var context = evt.getParameter("listItem").getBindingContext();
+		this.nav.to("Detail", context);
 	},
 	
 	onBeforeRendering : function() {
-		this.byId("SupplierForm").bindElement("BusinessPartner");
+		//this.byId("SupplierForm").bindElement("BusinessPartner");
 	}
 });

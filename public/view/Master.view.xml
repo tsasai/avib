@@ -18,16 +18,15 @@
 			id="list"
 			mode="{device>/listMode}"
 			select="handleListSelect"
-			items="{/SalesOrderCollection}" >
+			items="{/ClassesCollection}" >
 			<ObjectListItem
 				type="{device>/listItemType}"
 				press="handleListItemPress"
-				title="{SoId}"
-				number="{GrossAmount}"
-				numberUnit="{CurrencyCode}" >
-				<attributes>
-					<ObjectAttribute text="{BuyerName}" />
-				</attributes>
+				title="{Name}"
+				counter="{QuantityMaterials}" >
+				<!-- number="{Type}"
+				numberUnit="{CurrencyCode}"> -->
+				<!--
 				<firstStatus>
 					<ObjectStatus 
 						text="{
@@ -40,6 +39,7 @@
 						}"
 						 />
 				</firstStatus>
+				-->
 			</ObjectListItem>
 		</List>
 		<footer>

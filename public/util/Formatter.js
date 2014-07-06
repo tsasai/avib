@@ -1,7 +1,7 @@
 jQuery.sap.declare("sap.ui.demo.avib.util.Formatter");
 jQuery.sap.require("sap.ui.core.format.DateFormat");
 
-sap.ui.demo.myFiori.util.Formatter = {
+sap.ui.demo.avib.util.Formatter = {
 		
 	_statusStateMap: {
 		"P" : "Success",
@@ -14,7 +14,7 @@ sap.ui.demo.myFiori.util.Formatter = {
 	},
 	
 	statusState: function(value) {
-		var map = sap.ui.demo.myFiori.util.Formatter._statusStateMap;
+		var map = sap.ui.demo.avib.util.Formatter._statusStateMap;
 		return (value && map[value]) ? map[value] : "None";
 	},
 	

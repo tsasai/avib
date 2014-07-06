@@ -13,7 +13,7 @@ sap.ui.controller("sap.ui.demo.avib.view.Master", {
 		var filters = [];
 		var query = evt.getParameter("query");
 		if (query && query.length > 0) {
-			var filter = new sap.ui.model.Filter("SoId", sap.ui.model.FilterOperator.Contains, query);
+			var filter = new sap.ui.model.Filter("Name", sap.ui.model.FilterOperator.Contains, query);
 			filters.push(filter);
 		}
 		
@@ -35,8 +35,8 @@ sap.ui.controller("sap.ui.demo.avib.view.Master", {
 		var item = evt.getParameter("selectedItem");
 		var key = (item) ? item.getKey() : null;
 		if ("GrossAmount" === key || "LifecycleStatus" === key) {
-			sap.ui.demo.myFiori.util.Grouper.bundle = this.getView().getModel("i18n").getResourceBundle();
-			var grouper = sap.ui.demo.myFiori.util.Grouper[key];
+			sap.ui.demo.avib.util.Grouper.bundle = this.getView().getModel("i18n").getResourceBundle();
+			var grouper = sap.ui.demo.avib.util.Grouper[key];
 			sorters.push(new sap.ui.model.Sorter(key, true, grouper));
 		}
 

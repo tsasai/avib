@@ -1,12 +1,12 @@
 jQuery.sap.declare("sap.ui.demo.avib.util.Grouper");
 
-sap.ui.demo.myFiori.util.Grouper = {
+sap.ui.demo.avib.util.Grouper = {
 
 	bundle : null, // somebody has to set this
 
 	LifecycleStatus : function (oContext) {
 		var status = oContext.getProperty("LifecycleStatus");
-		var text = sap.ui.demo.myFiori.util.Grouper.bundle.getText("StatusText" + status, "?");
+		var text = sap.ui.demo.avib.util.Grouper.bundle.getText("StatusText" + status, "?");
 		return {
 			key: status,
 			text: text
